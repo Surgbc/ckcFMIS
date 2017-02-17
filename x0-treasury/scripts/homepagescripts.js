@@ -1,0 +1,1 @@
+$(".homeadministrative").click(function(){user_modify();});

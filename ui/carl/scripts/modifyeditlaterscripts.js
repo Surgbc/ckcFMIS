@@ -1,0 +1,1 @@
+$(".selectuserstd").click(function(){modifyeditselect($(this));});
