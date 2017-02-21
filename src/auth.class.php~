@@ -81,7 +81,7 @@ class jkusdatr_auth Extends JKUSDATREASURY
 	$pass = $this->__encrypt($pass);
 	
 	$query = sprintf("SELECT * FROM AUTH WHERE USER = '%s' AND PASS = '%s'", $user, $pass);
-//	echo $query;
+	echo $query;
 	$check = mysqli_query($this->link, $query);
 	if(mysqli_error($this->link)){$this->result = 103; return 0;} 						// error
 	if($check === false || mysqli_num_rows($check) == 0){$this->result = 104; return 0;} // error

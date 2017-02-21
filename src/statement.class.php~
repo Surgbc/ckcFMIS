@@ -48,11 +48,11 @@ class jkusdatr_statement Extends JKUSDATREASURY
  
  private function __download_statement()
  {
-	echo file_get_contents("use/current.htm");exit();//check delete this novweek3.html
+	//echo file_get_contents("use\ckcoctweek2.htm");exit();//check delete this
 	$from = isset($_GET["from"])?stripslashes($_GET["from"]):date("Y-m-d");
 	$to = isset($_GET["to"])?stripslashes($_GET["to"]):date("Y-m-d");
 	$data = sprintf("FDate=%s&TDate=%s&Search=Search", $from, $to);
-	
+	echo $data;
 	$this->__ckc_login();													
 	$this->result = $this->__ckc_statement_download($data);
 	return true;

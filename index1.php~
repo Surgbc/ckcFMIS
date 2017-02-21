@@ -3,7 +3,7 @@
  * This file can be used for debugging. Just remember to uncomment line 6
  */
 //required to include a number of files 
-DEFINE("CSYBER", "JKUSDATR");
+#DEFINE("CSYBER", "JKUSDATR");
 //var_dump($_GET);exit();
 /*
  *	Files required everywhere

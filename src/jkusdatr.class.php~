@@ -3,7 +3,6 @@
 /*
  *
  */
-include "src/csyber.class.php";
 
 class JKUSDATREASURY extends CSYBER
 {
@@ -18,13 +17,13 @@ class JKUSDATREASURY extends CSYBER
 	$postvars = sprintf("username=%s&password=%s&login=login", CKCUSER, CKCPASS);
 	$logged_in = $this->__curl1($url, $postvars);
 	$logged_in = str_replace("refresh", "", $logged_in);
-   // echo $logged_in;
 	return;
  }
  
  protected function __ckc_statement_download($data)
  {
 	$url = CKCSTATEMENT;
+	echo $url;
 	$cookiefile = dirname(__FILE__).'/cookie.txt';
 	$posted = $this->__curl1($url, $data);
 	return $posted;
@@ -36,7 +35,10 @@ class JKUSDATREASURY extends CSYBER
 	//$cookiefile = sprintf("%s/jtmp/%s", dirname(__FILE__), CKCCOOKIE);
 	$cookiefile = dirname(__FILE__).'/cookie.txt';
 	$posted = $this->__curl($url, $data, $cookiefile);
-	echo $posted;
+	//exit();
+	$actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
+	//echo $_SERVER['REQUEST_URI'] ;
+	 exit($actual_link);
 	if(stripos($posted, CKCRECEIPTSUCCESS) === false)return false;
 	return true;
  }
@@ -62,7 +64,7 @@ class JKUSDATREASURY extends CSYBER
  } 
  private function __curl($url, $postvars=false, $cookiefile)
  {
-	$session = curl_init($url);
+	$session = curl_init($url);	
 	curl_setopt ($session, CURLOPT_COOKIESESSION, true);
 	curl_setopt ($session, CURLOPT_POST, ($postvars === false)?false:true);
 	curl_setopt ($session, CURLOPT_POSTFIELDS, $postvars);

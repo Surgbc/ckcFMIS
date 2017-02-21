@@ -5,11 +5,11 @@ if(!DEFINED("CSYBER")) exit("unauthorised config access!");
 /*
  * MYSQL SERVER AND DB CREDENTIALS
  */
-DEFINE("SERVER", "localhost");
-DEFINE("DBUSER", "root");
+DEFINE("SERVER", "");
+DEFINE("DBUSER", "");
 DEFINE("DBPASS", "");
 
-DEFINE("CSYBER_DB", "JKUSDATR");
+DEFINE("CSYBER_DB", "");
 
 
 /*
@@ -18,6 +18,7 @@ DEFINE("CSYBER_DB", "JKUSDATR");
 DEFINE("CKCLOGIN", "http://ckcfinancialsystem.org/login.php");
 DEFINE("CKCUSER", "");
 DEFINE("CKCPASS", "");
+DEFINE("CHURCHNAME","");
 //DEFINE("CKCUSER", "");
 //DEFINE("CKCPASS", "");
 

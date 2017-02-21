@@ -2,18 +2,30 @@
 
 if(!DEFINED("CSYBER")) exit("unauthorised config access!");
 
-//database
-DEFINE("SERVER", "localhost");
-DEFINE("DBUSER", "root");
+/*
+ * MYSQL SERVER AND DB CREDENTIALS
+ */
+DEFINE("SERVER", "");
+DEFINE("DBUSER", "");
 DEFINE("DBPASS", "");
 
-DEFINE("CSYBER_DB", "JKUSDATR");
+DEFINE("CSYBER_DB", "");
 
-//CKC CONFIG
+
+/*
+ *	CKC CREDENTIALS
+ */
 DEFINE("CKCLOGIN", "http://ckcfinancialsystem.org/login.php");
 DEFINE("CKCUSER", "");
 DEFINE("CKCPASS", "");
-//DEFINE("CKCCOOKIE", "C:\wamp\www\\treasury\use/ckcookie.txt"); 
+DEFINE("CHURCHNAME","");
+//DEFINE("CKCUSER", "");
+//DEFINE("CKCPASS", "");
+
+//where to store the cookies
+/*
+	Modify this
+*/
 DEFINE("CKCCOOKIE", dirname(__FILE__)."\ckccookie"); 
 DEFINE("CKCRECEIPT", "http://ckcfinancialsystem.org/addreceipt.php");
 DEFINE("CKCRECEIPTSUCCESS","Record has been Added!");

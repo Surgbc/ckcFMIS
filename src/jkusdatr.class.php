@@ -17,7 +17,6 @@ class JKUSDATREASURY extends CSYBER
 	$postvars = sprintf("username=%s&password=%s&login=login", CKCUSER, CKCPASS);
 	$logged_in = $this->__curl1($url, $postvars);
 	$logged_in = str_replace("refresh", "", $logged_in);
-   // echo $logged_in;
 	return;
  }
  
@@ -36,7 +35,6 @@ class JKUSDATREASURY extends CSYBER
 	//$cookiefile = sprintf("%s/jtmp/%s", dirname(__FILE__), CKCCOOKIE);
 	$cookiefile = dirname(__FILE__).'/cookie.txt';
 	$posted = $this->__curl($url, $data, $cookiefile);
-	echo $posted;
 	if(stripos($posted, CKCRECEIPTSUCCESS) === false)return false;
 	return true;
  }
@@ -62,10 +60,7 @@ class JKUSDATREASURY extends CSYBER
  } 
  private function __curl($url, $postvars=false, $cookiefile)
  {
-	$session = curl_init($url);
-
-	//$postvars = "username=Jkusda&password=3490jk&login=login";
-	
+	$session = curl_init($url);	
 	curl_setopt ($session, CURLOPT_COOKIESESSION, true);
 	curl_setopt ($session, CURLOPT_POST, ($postvars === false)?false:true);
 	curl_setopt ($session, CURLOPT_POSTFIELDS, $postvars);

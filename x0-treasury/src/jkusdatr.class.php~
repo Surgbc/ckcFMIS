@@ -63,6 +63,9 @@ class JKUSDATREASURY extends CSYBER
  private function __curl($url, $postvars=false, $cookiefile)
  {
 	$session = curl_init($url);
+
+	//$postvars = "username=Jkusda&password=3490jk&login=login";
+	
 	curl_setopt ($session, CURLOPT_COOKIESESSION, true);
 	curl_setopt ($session, CURLOPT_POST, ($postvars === false)?false:true);
 	curl_setopt ($session, CURLOPT_POSTFIELDS, $postvars);
