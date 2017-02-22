@@ -53,7 +53,6 @@ class jkusdatr_statement Extends JKUSDATREASURY
 	$to = isset($_GET["to"])?stripslashes($_GET["to"]):date("Y-m-d");
 	$data = sprintf("FDate=%s&TDate=%s&Search=Search", $from, $to);
 	echo $data;
-	exit();
 	$this->__ckc_login();													
 	$this->result = $this->__ckc_statement_download($data);
 	return true;

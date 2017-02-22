@@ -110,7 +110,7 @@ class CSYBER
  */
  protected function __connect()
  {
-	$link = mysqli_connect(SERVER,DBUSER,DBPASS, CSYBER_DB); 
+	$link = mysqli_connect(SERVER,DBUSER,DBPASS); 
 	if(!$link) return mysqli_error(); 
 	
 	$this->link = $link;

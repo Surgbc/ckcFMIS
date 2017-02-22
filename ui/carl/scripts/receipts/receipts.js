@@ -9,6 +9,10 @@ $(".viewreceiptfoward").click(function(){viewreceiptnav_next();});
 $(".viewreceiptback").click(function(){viewreceiptnav_prev();});
 $(".viewreceiptdelete").click(function(){viewreceiptdelete();});
 $(".viewreceiptupdate").click(function(){viewreceiptupdate();});
+$(".viewreceiptdownload").click(function(){viewreceiptdownload();});
 
 /*      */
 $(".viewreceiptprintbtn").click(function(){viewreceiptprintbtn();});
+$(".viewreceiptimportemails").click(function(){importemails();});
+$(".viewreceiptgenerateimg").click(function(){receiptimg()();});
+$(".viewreceiptemail").click(function(){emailreceipts()();});

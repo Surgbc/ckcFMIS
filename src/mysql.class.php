@@ -14,8 +14,7 @@ class Mysql
  
  protected function __connect()
  {
-	$link = mysqli_connect(SERVER,DBUSER,DBPASS, CSYBER_DB); 
-	echo "is connect";
+	$link = mysql_connect(SERVER,DBUSER,DBPASS); 
 	if(!$link) return mysql_error(); 
 	
 	$this->link = $link;

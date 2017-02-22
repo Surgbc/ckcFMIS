@@ -27,6 +27,12 @@
 		</a>
 		</div>
 		<div><a id = "panel-menu" href="#">
+			<button id = "panel-button-receipts" class="importemails" alt="0">
+				Import Emails
+			</button>
+		</a>
+		</div>
+		<div><a id = "panel-menu" href="#">
 			<button id = "panel-button-receipts" class="modifycancel" alt="0">
 				&larr;&nbsp;BACK
 			</button>

@@ -102,6 +102,6 @@ exit();
  .
  .
  .
-		https://github.com/Surgbc/ckcFMIS.git
+		
 */
 ?>

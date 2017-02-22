@@ -43,6 +43,15 @@
 			<td>
 				<input class = 'viewreceiptdelete' type = 'button'value = 'Delete Receipt' />
 				<input class = 'viewreceiptupdate' type = 'button'value = 'Upload Receipts' />
+			</td>
+			<td>
+				<input class = 'viewreceiptdownload' type = 'button'value = 'Download receipts' />
+				<input class = 'viewreceiptimportemails' type = 'button'value = 'Import Emails' />
+			</td>
+			<td>
+				<input class = 'viewreceiptgenerateimg' type = 'button'value = 'Generate Rct Image' />
+				<input class = 'viewreceiptemail' type = 'button'value = 'Email Receipts' />
+			</td>
 			</tr>
 		</table>
 	</fieldset>																	

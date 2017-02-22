@@ -7,7 +7,6 @@
 			<tr>
 				<td>
 						<select id = ""class = 'reags_field viewreceiptyr'>
-							<option>2014</option>
 							<option>2015</option>
 							<option>2016</option>
 							<option>2017</option>

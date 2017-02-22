@@ -23,8 +23,8 @@ class JKUSDATREASURY extends CSYBER
  protected function __ckc_statement_download($data)
  {
 	$url = CKCSTATEMENT;
-	echo $url;
-	$cookiefile = dirname(__FILE__).'/cookie.txt';
+	//$cookiefile = dirname(__FILE__).'/cookie.txt';
+	//$posted = $this->__curl($url, $data, $cookiefile);
 	$posted = $this->__curl1($url, $data);
 	return $posted;
  }
@@ -35,6 +35,7 @@ class JKUSDATREASURY extends CSYBER
 	//$cookiefile = sprintf("%s/jtmp/%s", dirname(__FILE__), CKCCOOKIE);
 	$cookiefile = dirname(__FILE__).'/cookie.txt';
 	$posted = $this->__curl($url, $data, $cookiefile);
+	echo $posted;
 	if(stripos($posted, CKCRECEIPTSUCCESS) === false)return false;
 	return true;
  }
@@ -60,7 +61,10 @@ class JKUSDATREASURY extends CSYBER
  } 
  private function __curl($url, $postvars=false, $cookiefile)
  {
-	$session = curl_init($url);	
+	$session = curl_init($url);
+
+	//$postvars = "username=Jkusda&password=3490jk&login=login";
+	
 	curl_setopt ($session, CURLOPT_COOKIESESSION, true);
 	curl_setopt ($session, CURLOPT_POST, ($postvars === false)?false:true);
 	curl_setopt ($session, CURLOPT_POSTFIELDS, $postvars);

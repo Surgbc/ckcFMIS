@@ -1,7 +1,8 @@
-$(document).ready(function(){download_statement();});
+//$(document).ready(function(){download_statement();});
 
 var html_statement = "";
 var receipts_to_upload = {};
+var combinedfactor = 2;
 
 var download_statement = function ()
 {
@@ -57,10 +58,12 @@ var receipts_from_statements = function()
 		
 		var receipt = {};
 		$.each(fields, function(key, val){receipt[val] = tmp[key];});
-		var tmpcombined = receipt["Combined"];
+		var tmpcombined = parseInt(receipt["Combined"]);
 		//replace
-		
-		receipt["Combined"] = receipt["Combined"];
+		//check begin here. convert txt to int. multiply by factor. Re-download, 
+		receipt["Combined"] = combinedfactor * tmpcombined;//receipt["Combined"];
+		console.log("first: "+ tmpcombined);
+		console.log("sec: "+ receipt["Combined"]);
 		delete receipt["ChurchBudget"];
 		
 		//development
@@ -122,7 +125,7 @@ var upload_receipts = function()
 		data += "submit=submit";
 		//$("body").append(data+"<br><br>");
 		
-		var url = "index.php?main=receipts&action=add&"+data;
+		var url = "index.php?main=receipts&ckc=true&action=add&"+data;
 		$.get( url, function( data ) {$("body").append(url+"<br><br>");},"html");
 		//http://localhost/csyber/finance/jkusdatr/?main=receipts&action=add&submit=submit&name=Carol%20Kade&tithe=700&Ind=21
 	});
