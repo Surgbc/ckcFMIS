@@ -786,18 +786,18 @@ class jkusdatr_receipts Extends JKUSDATREASURY
 		
 		//echo $field;exit();
 		$successful_upload = $this->__ckc_receipt_upload($field);		
-		echo $field;
+	//	echo $field;
 	//	exit();
 		//$successful_upload = false;  ///check. delete
 		if($successful_upload !== false && $successful_upload != false)
 		{
 			if($uploaded == "F")$uploaded = 1;
 			else $uploaded++;
-		//	$query = sprintf("UPDATE receipts SET Uploaded ='%s' WHERE Ind = '%s'", $uploaded, $id);
+			$query = sprintf("UPDATE receipts SET Uploaded ='%s' WHERE Ind = '%s'", $uploaded, $id);
 		}
 		else 
-	//		$query = sprintf("UPDATE receipts SET Uploaded ='%sF' WHERE Ind = '%s'", $uploaded, $id);
-	//	mysqli_query($this->link, $query);
+			$query = sprintf("UPDATE receipts SET Uploaded ='%sF' WHERE Ind = '%s'", $uploaded, $id);
+		mysqli_query($this->link, $query);
 		;
 	}
 	//exit("Header:location");
