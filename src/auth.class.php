@@ -81,7 +81,6 @@ class jkusdatr_auth Extends JKUSDATREASURY
 	$pass = $this->__encrypt($pass);
 	
 	$query = sprintf("SELECT * FROM AUTH WHERE USER = '%s' AND PASS = '%s'", $user, $pass);
-//	echo $query;
 	$check = mysqli_query($this->link, $query);
 	if(mysqli_error($this->link)){$this->result = 103; return 0;} 						// error
 	if($check === false || mysqli_num_rows($check) == 0){$this->result = 104; return 0;} // error
@@ -276,15 +275,15 @@ class jkusdatr_auth Extends JKUSDATREASURY
 	switch($group)
 	{
 		case 0:
-			$ret = file_get_contents("ui\carl\pages\admin_modify.php");
+			$ret = file_get_contents("ui/carl/pages/admin_modify.php");
 				//can drop, sign up new, promote or alter new.
 			break;
 		case 1:
-			$ret = file_get_contents("ui\carl\deaconry_modify.php");
+			$ret = file_get_contents("ui/carl/pages/deaconry_modify.php");
 			//can only alter self
 			break;
 		default:
-			$ret = file_get_contents("ui\carl\guest_modify.php");
+			$ret = file_get_contents("ui/carl/pages/guest_modify.php");
 			//cannot do a thing
 			break;
 	}
@@ -298,13 +297,13 @@ class jkusdatr_auth Extends JKUSDATREASURY
 	switch($sub)
 	{
 		case "signup":
-			$ret = file_get_contents("ui\carl\pages\modifyforms\modifysignup.php");
+			$ret = file_get_contents("ui/carl/pages/modifyforms/modifysignup.php");
 			break;
 		case "alterself":
-			$ret = file_get_contents("ui\carl\pages\modifyforms\alterself.php");
+			$ret = file_get_contents("ui/carl/pages/modifyforms/alterself.php");
 			break;
 		case "modifyedit":
-			$ret = file_get_contents("ui\carl\pages\modifyforms\modifyedit.php");
+			$ret = file_get_contents("ui/carl/pages/modifyforms/modifyedit.php");
 			break;	
 		default:
 			;

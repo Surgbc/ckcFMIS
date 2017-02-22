@@ -61,6 +61,7 @@ class jkusdatr_ui extends CSYBER
 	switch($this->ui_grp)
 	{
 		case "Treasury":
+		case "Deaconry":
 			$ret = file_get_contents("ui/carl/pages/receipts/adminreceipts.php");
 			break;
 		default:
