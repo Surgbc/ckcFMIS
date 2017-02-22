@@ -675,7 +675,7 @@ class jkusdatr_receipts Extends JKUSDATREASURY
 	//Shared values required for all receipts
 	$values = array("Submit"=>"Submit", "Created_by"=>CHURCHNAME);
 	//assigned to each *required POST_VAR its value from $tmp
-	foreach($fields as $key=>$val)$values[$key] = $tmp[$val];
+	foreach($fields as $key=>$val)$values[$key] = stripslashes($tmp[$val]);
 	
 	//More table_fields that do not neccessarily have to be on each receipt
 	$unspecifiedtablefields = array(	
@@ -692,7 +692,7 @@ class jkusdatr_receipts Extends JKUSDATREASURY
 	//Assign these only iff their values is greater than zero.
 	$unspecifiedtablevalues = array();		
 	foreach($unspecifiedtablefields as $key=>$val)
-		if((float)$tmp[$val] >=0 )$unspecifiedtablevalues[$tmp[$key]] = $tmp[$val];
+		if((float)$tmp[$val] >=0 )$unspecifiedtablevalues[$tmp[$key]] = stripslashes($tmp[$val]);
 	
 	//other categories by receipt categorization. The Unsx table_fields are classified into these
 	$othercategories = array(
@@ -786,18 +786,18 @@ class jkusdatr_receipts Extends JKUSDATREASURY
 		
 		//echo $field;exit();
 		$successful_upload = $this->__ckc_receipt_upload($field);		
-	//	echo $field;
+		echo $field;
 	//	exit();
 		//$successful_upload = false;  ///check. delete
 		if($successful_upload !== false && $successful_upload != false)
 		{
 			if($uploaded == "F")$uploaded = 1;
 			else $uploaded++;
-			$query = sprintf("UPDATE receipts SET Uploaded ='%s' WHERE Ind = '%s'", $uploaded, $id);
+		//	$query = sprintf("UPDATE receipts SET Uploaded ='%s' WHERE Ind = '%s'", $uploaded, $id);
 		}
 		else 
-			$query = sprintf("UPDATE receipts SET Uploaded ='%sF' WHERE Ind = '%s'", $uploaded, $id);
-		mysqli_query($this->link, $query);
+	//		$query = sprintf("UPDATE receipts SET Uploaded ='%sF' WHERE Ind = '%s'", $uploaded, $id);
+	//	mysqli_query($this->link, $query);
 		;
 	}
 	//exit("Header:location");
