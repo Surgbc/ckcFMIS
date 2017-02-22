@@ -26,7 +26,7 @@ DEFINE("CHURCHNAME","");
 /*
 	Modify this
 */
-DEFINE("CKCCOOKIE", dirname(__FILE__)."\ckccookie"); 
+DEFINE("CKCCOOKIE", dirname(__FILE__)."/ckccookie"); 
 DEFINE("CKCRECEIPT", "http://ckcfinancialsystem.org/addreceipt.php");
 DEFINE("CKCRECEIPTSUCCESS","Record has been Added!");
 DEFINE("CKCSTATEMENT", "http://ckcfinancialsystem.org/searchtreasurer.php");//searchtreasurer.php
