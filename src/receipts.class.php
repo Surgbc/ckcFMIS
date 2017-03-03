@@ -149,7 +149,8 @@ class jkusdatr_receipts Extends JKUSDATREASURY
 					"Amt5"=>"amt5",
 					"Amt6"=>"amt6",
 					"Amt7"=>"amt7",
-					"Building"=>"devt"
+					"Building"=>"devt",
+					"Email"=>"email"
 					);	
 					
 	//assign to each variable given in $field its value from $vars or assign it a defaulr value if its not contained in $vars
@@ -177,7 +178,7 @@ class jkusdatr_receipts Extends JKUSDATREASURY
 	$amt6	= isset($vars["amt6"])?addslashes($vars["amt6"]):0;
 	$uns7	= isset($vars["uns7"])?addslashes($vars["uns7"]):"";
 	$amt7	= isset($vars["amt7"])?addslashes($vars["amt7"]):0;
-
+        $email = '';
 	//assign to field_values[] the values of the variables in the order in which the variables appear in $fields
 	//fatal: when value === false
 	$field_values = array();

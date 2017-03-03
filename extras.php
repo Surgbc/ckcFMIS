@@ -22,7 +22,7 @@ Session_start();
 DEFINE("CSYBER", "TREASURY");
 include "config/config.php";
 #include "src/mysql.class.php";
-include "src/PHPExcel.class.php";
+#include "src/PHPExcel.class.php";
 include "src/csyber.class.php";			//*main_class: all csyber
 include "src/jkusdatr.class.php";		//*main_class: jkusdatr
 include "src/extras.class.php";
