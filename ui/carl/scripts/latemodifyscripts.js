@@ -138,14 +138,13 @@ var viewreceiptdownload = function()
 	
 	
 	if(rcptdt == undefined || rcptdt == "")$(".viewreceiptdt").val("1");
-	
 	rcptdt = $(".viewreceiptdt").val();
+	if(rcptdt < 10)rcptdt = '0'+rcptdt;
 	var rcptmonths = 
 	{
 		"Jan":'01',"Feb":'02',"Mar":'03',"Apr":'04',"May":'05',"Jun":'06',"Jul":'07',"Aug":'08',"Sep":'09',"Oct":10,"Nov":11,"Dec":12
 	}
 	var rcptdate = rcptyr+"-"+rcptmonths[rcptmnt]+"-"+rcptdt;
-	
 	//var mydate = (ckcreceiptvar == 0)?"id":"ind";
 	var mydate = "date";
 	var url = "?main=receipts&action=download&"+mydate+"="+rcptdate;
@@ -274,6 +273,7 @@ var upload_receipts = function()
 		//$("body").append(data+"<br><br>");
 		
 		var url = "index.php?main=receipts&action=add&"+data;
+console.log(url);
 		$.get( url, function( data ) {$("#viewreceiptspanel").html(url+"<br><br>");},"html");
 		//http://localhost/csyber/finance/jkusdatr/?main=receipts&action=add&submit=submit&name=Carol%20Kade&tithe=700&Ind=21
 	});

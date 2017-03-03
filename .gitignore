@@ -2,3 +2,5 @@ config
 config/
 config/*
 config
+config/config.php
+

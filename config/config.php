@@ -5,19 +5,19 @@ if(!DEFINED("CSYBER")) exit("unauthorised config access!");
 /*
  * MYSQL SERVER AND DB CREDENTIALS
  */
-DEFINE("SERVER", "");
-DEFINE("DBUSER", "");
-DEFINE("DBPASS", "");
+DEFINE("SERVER", "localhost");
+DEFINE("DBUSER", "root");
+DEFINE("DBPASS", "ca!@kaql");
 
-DEFINE("CSYBER_DB", "");
+DEFINE("CSYBER_DB", "JKUSDATR");
 
 
 /*
  *	CKC CREDENTIALS
  */
 DEFINE("CKCLOGIN", "http://ckcfinancialsystem.org/login.php");
-DEFINE("CKCUSER", "");
-DEFINE("CKCPASS", "");
+DEFINE("CKCUSER", "Rimpa");
+DEFINE("CKCPASS", "rimpa");
 DEFINE("CHURCHNAME",sprintf("%s", CKCUSER));
 //DEFINE("CKCUSER", "");
 //DEFINE("CKCPASS", "");
@@ -44,12 +44,12 @@ DEFINE("RECEIPTSFILE","ExtraFiles/Receipts/");
 DEFINE("MAILSERVER",'mail.adhrc.co.ke');
 DEFINE("MAILSERVERPORT",25);
 DEFINE("MAILSERVERENCRYPTION",'');
-DEFINE("MAILSERVERUNAME",'');
-DEFINE("MAILSERVERPASS",'');
+DEFINE("MAILSERVERUNAME",'jkusda@adhrc.co.ke');
+DEFINE("MAILSERVERPASS",'JKUSDA123#');
 
 DEFINE("FROMEMAIL", "jkusda@adhrc.co.ke");
 DEFINE("FROMNAME", sprintf("%s Treasury", CHURCHNAME));
-DEFINE("REPLYEMAIL", "");
+DEFINE("REPLYEMAIL", "adarzeph@gmail.com");
 DEFINE("REPLYNAME", "Treasurer");
 
 ?>

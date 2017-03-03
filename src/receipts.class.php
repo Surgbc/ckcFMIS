@@ -154,6 +154,7 @@ class jkusdatr_receipts Extends JKUSDATREASURY
 					
 	//assign to each variable given in $field its value from $vars or assign it a defaulr value if its not contained in $vars
 	//fatal: missing $vars["Submit"]
+	foreach($vars as $ca=>$rol)if($rol == '')unset($vars[$ca]);
 	$submit = isset($vars["submit"])?true:false;
 	if(!$submit){$this->result = 101; return;}				//error
 	$date	= isset($vars["date"])?addslashes($vars["date"]):date("Y-m-d");
@@ -176,12 +177,13 @@ class jkusdatr_receipts Extends JKUSDATREASURY
 	$amt6	= isset($vars["amt6"])?addslashes($vars["amt6"]):0;
 	$uns7	= isset($vars["uns7"])?addslashes($vars["uns7"]):"";
 	$amt7	= isset($vars["amt7"])?addslashes($vars["amt7"]):0;
-	
+
 	//assign to field_values[] the values of the variables in the order in which the variables appear in $fields
 	//fatal: when value === false
 	$field_values = array();
 	foreach($fields as $key=>$field)
 	{
+		#echo "$key $field<br>";
 		if($$field === false){$this->result = 102; return;}	//fatal
 		$$field = str_replace(",", "", $$field);			//Remove commas from values. Important for numeric values such as 1,300
 		$field_values[] = $$field;
@@ -191,6 +193,7 @@ class jkusdatr_receipts Extends JKUSDATREASURY
 	foreach($fields as $key=>$val){if($val == "combined"){$field_values[$i] = /* 2**/ $field_values[$i]; }$i++;}//check double
 	//Fields and values as they should appear in INSERT query
 	$query_fields = implode(",", array_keys($fields));
+	var_dump($field_values);
 	$query_values = "'".implode("','", $field_values)."'";
 	
 	//Decide which table (and query) to use depending on $_GET["Ind"].
@@ -208,7 +211,7 @@ class jkusdatr_receipts Extends JKUSDATREASURY
 		$table = "receipts";	
 	}
 	$query = sprintf("INSERT INTO %s (%s) VALUES(%s)", $table, $query_fields, $query_values);
-	
+	echo $query;
 	//database connection
 	$this->__connect();
 	mysqli_query($this->link, $query);
